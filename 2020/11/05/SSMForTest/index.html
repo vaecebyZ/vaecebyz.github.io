@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SSM项目新建模块开发——Uediter - 散华的秘密小屋</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Sanka,"> 
+    <meta name="description" content="1.写好访问路径：
+2.新建控制器：uediterController.java123456789101112131415@Controllerpublic class UediterControl,"> 
+    <meta name="author" content="Sanka"> 
+    <link rel="alternative" href="atom.xml" title="散华的秘密小屋" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">散华的秘密小屋</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">SSM项目新建模块开发——Uediter</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">SSM项目新建模块开发——Uediter</h1>
+        <div class="stuff">
+            <span>十一月 05, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Plan/" rel="tag">Plan</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h5 id="1-写好访问路径："><a href="#1-写好访问路径：" class="headerlink" title="1.写好访问路径："></a>1.写好访问路径：</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/B2Th60"><img src="https://s1.ax1x.com/2020/11/05/B2Th60.md.png" alt="B2Th60.md.png"></a></p>
+<h5 id="2-新建控制器：uediterController-java"><a href="#2-新建控制器：uediterController-java" class="headerlink" title="2.新建控制器：uediterController.java"></a>2.新建控制器：uediterController.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UediterController</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//@Autowired</span></span><br><span class="line">	<span class="comment">//UediterService uediterService; //依赖注入但是暂时并不需要</span></span><br><span class="line">    </span><br><span class="line">	<span class="meta">@RequestMapping(value=&quot;admin/uediter&quot;,method = RequestMethod.GET)</span><span class="comment">//路径映射</span></span><br><span class="line">    </span><br><span class="line">	<span class="function"><span class="keyword">public</span> ModelAndView <span class="title">studentManage</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		ModelAndView model = <span class="keyword">new</span> ModelAndView();</span><br><span class="line">		model.setViewName(<span class="string">&quot;admin/student/uediterMain&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> model;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-新建View-UediterMain-jsp"><a href="#3-新建View-UediterMain-jsp" class="headerlink" title="3.新建View: UediterMain.jsp"></a>3.新建View: UediterMain.jsp</h5><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">&quot;java&quot;</span> contentType=<span class="string">&quot;text/html; charset=UTF-8&quot;</span> pageEncoding=<span class="string">&quot;UTF-8&quot;</span>%&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;spring&quot;</span> uri=<span class="string">&quot;http://www.springframework.org/tags&quot;</span>%&gt;</span><br><span class="line">&lt;%@ taglib prefix=<span class="string">&quot;c&quot;</span> uri=<span class="string">&quot;http://java.sun.com/jsp/jstl/core&quot;</span>%&gt;</span><br><span class="line">&lt;%<span class="meta">@page</span> session=<span class="string">&quot;true&quot;</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;utf-8&quot;</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">&quot;X-UA-Compatible&quot;</span> content=<span class="string">&quot;IE=edge&quot;</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">&quot;_csrf&quot;</span> content=<span class="string">&quot;$&#123;_csrf.token&#125;&quot;</span>/&gt;</span><br><span class="line">    &lt;meta name=<span class="string">&quot;_csrf_header&quot;</span> content=<span class="string">&quot;$&#123;_csrf.headerName&#125;&quot;</span>/&gt;</span><br><span class="line">    &lt;title&gt;商城后台&lt;/title&gt;</span><br><span class="line">	&lt;jsp:include page=<span class="string">&quot;../commonCss.jsp&quot;</span>/&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;blank&quot;</span>&gt;</span><br><span class="line">&lt;jsp:include page=<span class="string">&quot;../main/top.jsp&quot;</span>/&gt; </span><br><span class="line">&lt;jsp:include page=<span class="string">&quot;../main/left.jsp&quot;</span>/&gt;</span><br><span class="line">&lt;jsp:include page=<span class="string">&quot;../commonJs.jsp&quot;</span>/&gt; </span><br><span class="line">	&lt;div id=<span class="string">&quot;wrapper&quot;</span>&gt;</span><br><span class="line">	&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;content animate-panel&quot;</span>&gt;	</span><br><span class="line">	&lt;!--&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;small-header transition&quot;</span>&gt;</span><br><span class="line">		    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;hpanel&quot;</span>&gt;</span><br><span class="line">		        &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;panel-body&quot;</span>&gt;</span><br><span class="line">					&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;row&quot;</span>&gt;</span><br><span class="line">							&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;hpanel&quot;</span>&gt;</span><br><span class="line">								&lt;div id=&quot;error_div&quot; class=&quot;text-left&quot;&gt;&lt;/div&gt;</span><br><span class="line">									顶部搜索</span><br><span class="line">								&lt;/div&gt;</span><br><span class="line">						&lt;/div&gt;</span><br><span class="line">					&lt;/div&gt;</span><br><span class="line">				&lt;/div&gt;	</span><br><span class="line">		&lt;/div&gt;--&gt;</span><br><span class="line">		&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;row&quot;</span>&gt;</span><br><span class="line">			&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;col-lg-12&quot;</span>&gt;</span><br><span class="line">				&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;hpanel&quot;</span>&gt;</span><br><span class="line">					&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;panel-body&quot;</span>&gt;</span><br><span class="line">						&lt;h1&gt;内容主体&lt;/h1&gt;</span><br><span class="line">					&lt;/div&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-引入Uediter"><a href="#3-引入Uediter" class="headerlink" title="3.引入Uediter"></a>3.引入Uediter</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/B2bkOP"><img src="https://s1.ax1x.com/2020/11/05/B2bkOP.md.png" alt="B2bkOP.md.png"></a></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;row&quot;</span>&gt;</span><br><span class="line">			&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;col-lg-12&quot;</span>&gt;</span><br><span class="line">				&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;hpanel&quot;</span>&gt;</span><br><span class="line">					&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;panel-body&quot;</span>&gt;</span><br><span class="line">						&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;form-group col-lg-12&quot;</span>&gt;</span><br><span class="line">											&lt;label&gt;内容&lt;/label&gt;</span><br><span class="line">											&lt;script id=&quot;container&quot; type=&quot;text/plain&quot;&gt;&lt;/script&gt;</span><br><span class="line">												&lt;!-- 配置文件 --&gt;</span><br><span class="line">												&lt;script type=&quot;text/javascript&quot; src=&quot;$&#123;pageContext.request.contextPath&#125;/resources/admin/js/ueditor/ueditor.config.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">												&lt;!--　编辑器源码文件 --&gt;</span><br><span class="line">												&lt;script type=&quot;text/javascript&quot; src=&quot;$&#123;pageContext.request.contextPath&#125;/resources/admin/js/ueditor/ueditor.all.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">												&lt;!--　实例化编辑器 --&gt;</span><br><span class="line">												&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><br><span class="line">											        <span class="keyword">var</span> ue = UE.getEditor(<span class="string">&#x27;container&#x27;</span>,&#123;autoWidth: <span class="keyword">true</span>&#125;);</span><br><span class="line">											        ue.ready(function() &#123;</span><br><span class="line">											        	 ue.setContent($(<span class="string">&quot;#content&quot;</span>).val());</span><br><span class="line">											        &#125;);</span><br><span class="line">										   &lt;/script&gt;</span><br><span class="line">									&lt;/div&gt;</span><br><span class="line">					&lt;/div&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/B2bWpd"><img src="https://s1.ax1x.com/2020/11/05/B2bWpd.png" alt="B2bWpd.png"></a></p>
+<h5 id="一些核心有用的东西："><a href="#一些核心有用的东西：" class="headerlink" title="一些核心有用的东西："></a>一些核心有用的东西：</h5><p>​    </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">HTML</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en-US&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>ueditor demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 加载编辑器的容器 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span> <span class="attr">name</span>=<span class="string">&quot;content&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/plain&quot;</span>&gt;</span></span><br><span class="line">        这里写你的初始化内容</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 配置文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;ueditor.config.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 编辑器源码文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;ueditor.all.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 实例化编辑器 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> ue = UE.getEditor(<span class="string">&#x27;container&#x27;</span>);</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ue = UE.getContent();</span><br><span class="line"><span class="comment">//对编辑器的操作最好在编辑器ready之后再做</span></span><br><span class="line">ue.ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//设置编辑器的内容</span></span><br><span class="line">    ue.setContent(<span class="string">&#x27;提交需要把contenter放到form表单里&#x27;</span>);</span><br><span class="line">    <span class="comment">//获取html内容，返回: &lt;p&gt;hello&lt;/p&gt;</span></span><br><span class="line">    <span class="keyword">var</span> html = ue.getContent();</span><br><span class="line">    <span class="comment">//获取纯文本内容，返回: hello</span></span><br><span class="line">    <span class="keyword">var</span> txt = ue.getContentTxt();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><h5 id="实例化编辑器到id为-container-的-dom-容器上：详细"><a href="#实例化编辑器到id为-container-的-dom-容器上：详细" class="headerlink" title="实例化编辑器到id为 container 的 dom 容器上：详细"></a>实例化编辑器到id为 container 的 dom 容器上：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:getEditor()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ue = UE.getEditor(<span class="string">&#x27;container&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h5 id="设置编辑器内容：详细"><a href="#设置编辑器内容：详细" class="headerlink" title="设置编辑器内容：详细"></a>设置编辑器内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setContent()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ue.ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    ue.setContent(<span class="string">&#x27;&lt;p&gt;hello!&lt;/p&gt;&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="追加编辑器内容：详细"><a href="#追加编辑器内容：详细" class="headerlink" title="追加编辑器内容：详细"></a>追加编辑器内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setContent()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ue.ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    ue.setContent(<span class="string">&#x27;&lt;p&gt;new text&lt;/p&gt;&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="获取编辑器html内容：详细"><a href="#获取编辑器html内容：详细" class="headerlink" title="获取编辑器html内容：详细"></a>获取编辑器html内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:getContent()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ue.ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> html = ue.getContent();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="获取纯文本内容：详细"><a href="#获取纯文本内容：详细" class="headerlink" title="获取纯文本内容：详细"></a>获取纯文本内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:getContentTxt()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.getContentTxt();</span><br></pre></td></tr></table></figure>
+
+<h5 id="获取保留格式的文本内容：详细"><a href="#获取保留格式的文本内容：详细" class="headerlink" title="获取保留格式的文本内容：详细"></a>获取保留格式的文本内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:getContent()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.getPlainTxt();</span><br></pre></td></tr></table></figure>
+
+<h5 id="获取纯文本内容：详细-1"><a href="#获取纯文本内容：详细-1" class="headerlink" title="获取纯文本内容：详细"></a>获取纯文本内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:getContentTxt()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.getContentTxt();</span><br></pre></td></tr></table></figure>
+
+<h5 id="判断编辑器是否有内容：详细"><a href="#判断编辑器是否有内容：详细" class="headerlink" title="判断编辑器是否有内容：详细"></a>判断编辑器是否有内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:hasContents()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.hasContents();</span><br></pre></td></tr></table></figure>
+
+<h5 id="让编辑器获得焦点：详细"><a href="#让编辑器获得焦点：详细" class="headerlink" title="让编辑器获得焦点：详细"></a>让编辑器获得焦点：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:focus()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.focus();</span><br></pre></td></tr></table></figure>
+
+<h5 id="让编辑器获得焦点"><a href="#让编辑器获得焦点" class="headerlink" title="让编辑器获得焦点"></a>让编辑器获得焦点</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.blur();</span><br></pre></td></tr></table></figure>
+
+<h5 id="判断编辑器是否获得焦点：详细"><a href="#判断编辑器是否获得焦点：详细" class="headerlink" title="判断编辑器是否获得焦点：详细"></a>判断编辑器是否获得焦点：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.dom.Selection:isFocus()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.isFocus();</span><br></pre></td></tr></table></figure>
+
+<h5 id="设置当前编辑区域不可编辑：详细"><a href="#设置当前编辑区域不可编辑：详细" class="headerlink" title="设置当前编辑区域不可编辑：详细"></a>设置当前编辑区域不可编辑：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setDisabled()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.setDisabled();</span><br></pre></td></tr></table></figure>
+
+<h5 id="设置当前编辑区域可以编辑：详细"><a href="#设置当前编辑区域可以编辑：详细" class="headerlink" title="设置当前编辑区域可以编辑：详细"></a>设置当前编辑区域可以编辑：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setEnabled()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.setEnabled();</span><br></pre></td></tr></table></figure>
+
+<h5 id="隐藏编辑器：详细"><a href="#隐藏编辑器：详细" class="headerlink" title="隐藏编辑器：详细"></a>隐藏编辑器：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setHide()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.setHide();</span><br></pre></td></tr></table></figure>
+
+<h5 id="显示编辑器：详细"><a href="#显示编辑器：详细" class="headerlink" title="显示编辑器：详细"></a>显示编辑器：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setShow()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.setShow();</span><br></pre></td></tr></table></figure>
+
+<h5 id="获得当前选中的文本：详细"><a href="#获得当前选中的文本：详细" class="headerlink" title="获得当前选中的文本：详细"></a>获得当前选中的文本：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setShow()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.selection.getText();</span><br></pre></td></tr></table></figure>
+
+<h4 id="常用命令：详细"><a href="#常用命令：详细" class="headerlink" title="常用命令：详细"></a>常用命令：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND.LIST">详细</a></h4><h5 id="在当前光标位置插入html内容"><a href="#在当前光标位置插入html内容" class="headerlink" title="在当前光标位置插入html内容"></a>在当前光标位置插入html内容</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;inserthtml&#x27;</span>, <span class="string">&#x27;&lt;span&gt;hello!&lt;/span&gt;&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h5 id="设置当前选区文本格式：详细"><a href="#设置当前选区文本格式：详细" class="headerlink" title="设置当前选区文本格式：详细"></a>设置当前选区文本格式：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND.LIST">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;bold&#x27;</span>); <span class="comment">//加粗</span></span><br><span class="line">ue.execCommand(<span class="string">&#x27;italic&#x27;</span>); <span class="comment">//加斜线</span></span><br><span class="line">ue.execCommand(<span class="string">&#x27;subscript&#x27;</span>); <span class="comment">//设置上标</span></span><br><span class="line">ue.execCommand(<span class="string">&#x27;supscript&#x27;</span>); <span class="comment">//设置下标</span></span><br><span class="line">ue.execCommand(<span class="string">&#x27;forecolor&#x27;</span>, <span class="string">&#x27;#FF0000&#x27;</span>); <span class="comment">//设置字体颜色</span></span><br><span class="line">ue.execCommand(<span class="string">&#x27;backcolor&#x27;</span>, <span class="string">&#x27;#0000FF&#x27;</span>); <span class="comment">//设置字体背景颜色</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="回退编辑器内容：详细"><a href="#回退编辑器内容：详细" class="headerlink" title="回退编辑器内容：详细"></a>回退编辑器内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND::undo">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;undo&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h5 id="撤销回退编辑器内容：详细"><a href="#撤销回退编辑器内容：详细" class="headerlink" title="撤销回退编辑器内容：详细"></a>撤销回退编辑器内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND::redo">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;redo&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h5 id="切换源码和可视化编辑模式：详细"><a href="#切换源码和可视化编辑模式：详细" class="headerlink" title="切换源码和可视化编辑模式：详细"></a>切换源码和可视化编辑模式：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND::source">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;source&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h5 id="选中所有内容：详细"><a href="#选中所有内容：详细" class="headerlink" title="选中所有内容：详细"></a>选中所有内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND::selectall">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;selectall&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h5 id="清空内容：详细"><a href="#清空内容：详细" class="headerlink" title="清空内容：详细"></a>清空内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND::cleardoc">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;cleardoc&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h5 id="读取草稿箱"><a href="#读取草稿箱" class="headerlink" title="读取草稿箱"></a>读取草稿箱</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;drafts&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h5 id="清空草稿箱"><a href="#清空草稿箱" class="headerlink" title="清空草稿箱"></a>清空草稿箱</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;clearlocaldata&#x27;</span>);</span><br></pre></td></tr></table></figure>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://link.hhtjim.com/163/1485877465.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://link.hhtjim.com/163/1485874478.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
