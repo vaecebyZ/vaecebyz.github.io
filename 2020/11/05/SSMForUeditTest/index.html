@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>SSM项目新建模块开发——Uediter - 散华的秘密小屋</title>
+    <title>SSM项目模块开发(竞赛使用)——Uediter - 散华的秘密小屋</title>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
@@ -29,7 +29,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
     <div title="播放/暂停" class="iconfont icon-play"></div>
-    <h3 class="subtitle">SSM项目新建模块开发——Uediter</h3>
+    <h3 class="subtitle">SSM项目模块开发(竞赛使用)——Uediter</h3>
     <div class="social">
         <div>
             <div class="share">
@@ -44,7 +44,7 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">SSM项目新建模块开发——Uediter</h1>
+        <h1 class="title">SSM项目模块开发(竞赛使用)——Uediter</h1>
         <div class="stuff">
             <span>十一月 05, 2020</span>
             
@@ -67,7 +67,7 @@
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ue = UE.getContent();</span><br><span class="line"><span class="comment">//对编辑器的操作最好在编辑器ready之后再做</span></span><br><span class="line">ue.ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">//设置编辑器的内容</span></span><br><span class="line">    ue.setContent(<span class="string">&#x27;提交需要把contenter放到form表单里&#x27;</span>);</span><br><span class="line">    <span class="comment">//获取html内容，返回: &lt;p&gt;hello&lt;/p&gt;</span></span><br><span class="line">    <span class="keyword">var</span> html = ue.getContent();</span><br><span class="line">    <span class="comment">//获取纯文本内容，返回: hello</span></span><br><span class="line">    <span class="keyword">var</span> txt = ue.getContentTxt();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
-<h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><h5 id="实例化编辑器到id为-container-的-dom-容器上：详细"><a href="#实例化编辑器到id为-container-的-dom-容器上：详细" class="headerlink" title="实例化编辑器到id为 container 的 dom 容器上：详细"></a>实例化编辑器到id为 container 的 dom 容器上：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:getEditor()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ue = UE.getEditor(<span class="string">&#x27;container&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="常用方法-："><a href="#常用方法-：" class="headerlink" title="常用方法 ："></a>常用方法 ：</h4><h5 id="实例化编辑器到id为-container-的-dom-容器上：详细"><a href="#实例化编辑器到id为-container-的-dom-容器上：详细" class="headerlink" title="实例化编辑器到id为 container 的 dom 容器上：详细"></a>实例化编辑器到id为 container 的 dom 容器上：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:getEditor()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ue = UE.getEditor(<span class="string">&#x27;container&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
 <h5 id="设置编辑器内容：详细"><a href="#设置编辑器内容：详细" class="headerlink" title="设置编辑器内容：详细"></a>设置编辑器内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setContent()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ue.ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    ue.setContent(<span class="string">&#x27;&lt;p&gt;hello!&lt;/p&gt;&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
@@ -83,41 +83,17 @@
 
 <h5 id="判断编辑器是否有内容：详细"><a href="#判断编辑器是否有内容：详细" class="headerlink" title="判断编辑器是否有内容：详细"></a>判断编辑器是否有内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:hasContents()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.hasContents();</span><br></pre></td></tr></table></figure>
 
-<h5 id="让编辑器获得焦点：详细"><a href="#让编辑器获得焦点：详细" class="headerlink" title="让编辑器获得焦点：详细"></a>让编辑器获得焦点：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:focus()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.focus();</span><br></pre></td></tr></table></figure>
+<h2 id="上传图片："><a href="#上传图片：" class="headerlink" title="上传图片："></a>上传图片：</h2><p>1.配置：</p>
+<p>在Uediter.jsp中加入CSRF相关：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">id</span>=<span class="string">&quot;parameterName&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;_csrf.parameterName&#125;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">id</span>=<span class="string">&quot;token&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;_csrf.token&#125;&quot;</span>&gt;</span> </span><br></pre></td></tr></table></figure>
 
-<h5 id="让编辑器获得焦点"><a href="#让编辑器获得焦点" class="headerlink" title="让编辑器获得焦点"></a>让编辑器获得焦点</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.blur();</span><br></pre></td></tr></table></figure>
+<p>2.在js/uediter/jsp/config.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="attr">&quot;imageActionName&quot;</span>:<span class="string">&quot;uploadimage&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;imageFieldName&quot;</span>: <span class="string">&quot;upfile&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;imageMaxSize&quot;</span>: <span class="number">2048000</span>,</span><br><span class="line">    <span class="attr">&quot;imageAllowFiles&quot;</span>: [<span class="string">&quot;.png&quot;</span>, <span class="string">&quot;.jpg&quot;</span>, <span class="string">&quot;.jpeg&quot;</span>, <span class="string">&quot;.gif&quot;</span>, <span class="string">&quot;.bmp&quot;</span>],</span><br><span class="line">    <span class="attr">&quot;imageCompressEnable&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;imageCompressBorder&quot;</span>: <span class="number">1600</span>,</span><br><span class="line">    <span class="attr">&quot;imageInsertAlign&quot;</span>: <span class="string">&quot;none&quot;</span>, </span><br><span class="line">    <span class="attr">&quot;imageUrlPrefix&quot;</span>: <span class="string">&quot;http://localhost:8080/Shopping&quot;</span>, <span class="comment">/* 图片访问路径前缀 */</span></span><br><span class="line">    <span class="attr">&quot;imagePathFormat&quot;</span>: <span class="string">&quot;/upload/image/&#123;yyyy&#125;&#123;mm&#125;&#123;dd&#125;/&#123;time&#125;&#123;rand:6&#125;&quot;</span>, <span class="comment">/* 上传保存路径,可以自定义保存路径和文件名格式 */</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h5 id="判断编辑器是否获得焦点：详细"><a href="#判断编辑器是否获得焦点：详细" class="headerlink" title="判断编辑器是否获得焦点：详细"></a>判断编辑器是否获得焦点：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.dom.Selection:isFocus()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.isFocus();</span><br></pre></td></tr></table></figure>
+<p>之后页面上就可以了：</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BoUORU"><img src="https://s1.ax1x.com/2020/11/08/BoUORU.md.png" alt="BoUORU.md.png"></a></p>
+<p>​    </p>
 
-<h5 id="设置当前编辑区域不可编辑：详细"><a href="#设置当前编辑区域不可编辑：详细" class="headerlink" title="设置当前编辑区域不可编辑：详细"></a>设置当前编辑区域不可编辑：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setDisabled()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.setDisabled();</span><br></pre></td></tr></table></figure>
-
-<h5 id="设置当前编辑区域可以编辑：详细"><a href="#设置当前编辑区域可以编辑：详细" class="headerlink" title="设置当前编辑区域可以编辑：详细"></a>设置当前编辑区域可以编辑：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setEnabled()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.setEnabled();</span><br></pre></td></tr></table></figure>
-
-<h5 id="隐藏编辑器：详细"><a href="#隐藏编辑器：详细" class="headerlink" title="隐藏编辑器：详细"></a>隐藏编辑器：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setHide()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.setHide();</span><br></pre></td></tr></table></figure>
-
-<h5 id="显示编辑器：详细"><a href="#显示编辑器：详细" class="headerlink" title="显示编辑器：详细"></a>显示编辑器：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setShow()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.setShow();</span><br></pre></td></tr></table></figure>
-
-<h5 id="获得当前选中的文本：详细"><a href="#获得当前选中的文本：详细" class="headerlink" title="获得当前选中的文本：详细"></a>获得当前选中的文本：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setShow()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.selection.getText();</span><br></pre></td></tr></table></figure>
-
-<h4 id="常用命令：详细"><a href="#常用命令：详细" class="headerlink" title="常用命令：详细"></a>常用命令：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND.LIST">详细</a></h4><h5 id="在当前光标位置插入html内容"><a href="#在当前光标位置插入html内容" class="headerlink" title="在当前光标位置插入html内容"></a>在当前光标位置插入html内容</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;inserthtml&#x27;</span>, <span class="string">&#x27;&lt;span&gt;hello!&lt;/span&gt;&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h5 id="设置当前选区文本格式：详细"><a href="#设置当前选区文本格式：详细" class="headerlink" title="设置当前选区文本格式：详细"></a>设置当前选区文本格式：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND.LIST">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;bold&#x27;</span>); <span class="comment">//加粗</span></span><br><span class="line">ue.execCommand(<span class="string">&#x27;italic&#x27;</span>); <span class="comment">//加斜线</span></span><br><span class="line">ue.execCommand(<span class="string">&#x27;subscript&#x27;</span>); <span class="comment">//设置上标</span></span><br><span class="line">ue.execCommand(<span class="string">&#x27;supscript&#x27;</span>); <span class="comment">//设置下标</span></span><br><span class="line">ue.execCommand(<span class="string">&#x27;forecolor&#x27;</span>, <span class="string">&#x27;#FF0000&#x27;</span>); <span class="comment">//设置字体颜色</span></span><br><span class="line">ue.execCommand(<span class="string">&#x27;backcolor&#x27;</span>, <span class="string">&#x27;#0000FF&#x27;</span>); <span class="comment">//设置字体背景颜色</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h5 id="回退编辑器内容：详细"><a href="#回退编辑器内容：详细" class="headerlink" title="回退编辑器内容：详细"></a>回退编辑器内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND::undo">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;undo&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h5 id="撤销回退编辑器内容：详细"><a href="#撤销回退编辑器内容：详细" class="headerlink" title="撤销回退编辑器内容：详细"></a>撤销回退编辑器内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND::redo">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;redo&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h5 id="切换源码和可视化编辑模式：详细"><a href="#切换源码和可视化编辑模式：详细" class="headerlink" title="切换源码和可视化编辑模式：详细"></a>切换源码和可视化编辑模式：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND::source">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;source&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h5 id="选中所有内容：详细"><a href="#选中所有内容：详细" class="headerlink" title="选中所有内容：详细"></a>选中所有内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND::selectall">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;selectall&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h5 id="清空内容：详细"><a href="#清空内容：详细" class="headerlink" title="清空内容：详细"></a>清空内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#COMMAND::cleardoc">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;cleardoc&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h5 id="读取草稿箱"><a href="#读取草稿箱" class="headerlink" title="读取草稿箱"></a>读取草稿箱</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;drafts&#x27;</span>);</span><br></pre></td></tr></table></figure>
-
-<h5 id="清空草稿箱"><a href="#清空草稿箱" class="headerlink" title="清空草稿箱"></a>清空草稿箱</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.execCommand(<span class="string">&#x27;clearlocaldata&#x27;</span>);</span><br></pre></td></tr></table></figure>
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
                 <source type="audio/mpeg" src="">
