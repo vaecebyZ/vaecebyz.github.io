@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title> - 散华的秘密小屋</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Sanka,"> 
+    <meta name="description" content="wallet.vue
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484,"> 
+    <meta name="author" content="Sanka"> 
+    <link rel="alternative" href="atom.xml" title="散华的秘密小屋" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">散华的秘密小屋</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle"></h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title"></h1>
+        <div class="stuff">
+            <span>十一月 10, 2020</span>
+            
+
+        </div>
+        <div class="content markdown">
+            <p>wallet.vue</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;div&quot;&gt;</span><br><span class="line">    &lt;mHeader&gt;钱包充值&lt;&#x2F;mHeader&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;notice&quot;&gt;</span><br><span class="line">       &lt;img src&#x3D;&quot;&#x2F;static&#x2F;img&#x2F;tongzhi.png&quot; style&#x3D;&quot;float:left;height:1.3em;width:1.3em;&quot; &gt;</span><br><span class="line">        &lt;span&gt;当前电子钱包账户余额为：￥&#123;&#123;amount&#125;&#125;&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div style&#x3D;&quot;margin-top:1px;text-align: left&quot;&gt;</span><br><span class="line">      &lt;mt-cell title&#x3D;&quot;电子钱包充值&quot;&#x2F;&gt;</span><br><span class="line">      &lt;mt-field</span><br><span class="line">        label&#x3D;&quot;充值金额&quot;</span><br><span class="line">        placeholder&#x3D;&quot;充值金额&quot;</span><br><span class="line">        required</span><br><span class="line">        type&#x3D;&quot;number&quot;</span><br><span class="line">        v-model&#x3D;&quot;money&quot;</span><br><span class="line">      &#x2F;&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;mt-button @click&#x3D;&quot;charge&quot; block class&#x3D;&quot;cell&quot; plain size&#x3D;&quot;large&quot; square style&#x3D;&quot;margin-top: 20px&quot;</span><br><span class="line">                type&#x3D;&quot;danger&quot;&gt;确认充值</span><br><span class="line">    &lt;&#x2F;mt-button&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  import mHeader from &#39;.&#x2F;header&#39;</span><br><span class="line"></span><br><span class="line">  export default &#123;</span><br><span class="line">    data () &#123;</span><br><span class="line">      return &#123;</span><br><span class="line">        amount: null,</span><br><span class="line">        money: 0</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      charge () &#123;</span><br><span class="line">        if (this.money &gt; 0)</span><br><span class="line">          this.$post(this.$api.API_URL_CUSTOMER_Recharge_Account, &#123;</span><br><span class="line">            userId: this.$store.getters.user.id,</span><br><span class="line">            amount: this.money</span><br><span class="line">          &#125;).then (res &#x3D;&gt; &#123;</span><br><span class="line">            if (res.errorCode &#x3D;&#x3D; 0) &#123;</span><br><span class="line">              this.$dialog.alert (&#123;message: &#39;充值成功&#39;&#125;)</span><br><span class="line">              this.getBalance ()</span><br><span class="line">              this.money &#x3D; 0</span><br><span class="line">            &#125; else this.$dialog.alert (&#123;message: &#39;网络超时！&#39;&#125;)</span><br><span class="line">          &#125;)</span><br><span class="line">        else this.$dialog.alert (&#123;message: &#39;请输入大于0的值&#39;&#125;)</span><br><span class="line">      &#125;,</span><br><span class="line">      getBalance () &#123;</span><br><span class="line">        this.$post(this.$api.API_URL_CUSTOMER_Account, &#123;</span><br><span class="line">          userId: this.$store.getters.user.id</span><br><span class="line">        &#125;).then (res &#x3D;&gt; &#123;</span><br><span class="line">          if (res.errorCode &#x3D;&#x3D; 0) &#123;</span><br><span class="line">            this.amount &#x3D; res.data.amount;</span><br><span class="line">          &#125; else &#123;</span><br><span class="line">            this.$dialog.alert (&#123;message: &#39;网络超时！&#39;&#125;)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    created () &#123;</span><br><span class="line">      this.getBalance ()</span><br><span class="line"></span><br><span class="line">    &#125;,</span><br><span class="line">    components: &#123;mHeader&#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang&#x3D;&quot;stylus&quot; scoped&gt;</span><br><span class="line"></span><br><span class="line">.notice</span><br><span class="line">  text-align left;</span><br><span class="line">  padding 5px 20px;</span><br><span class="line">  box-sizing border-box; </span><br><span class="line">  background-color #fffbe8;</span><br><span class="line">  color #ed6a0c;</span><br><span class="line">  font-size 14px;</span><br><span class="line">  img </span><br><span class="line">    margin-right 5px;</span><br><span class="line">  </span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://link.hhtjim.com/163/1485877465.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://link.hhtjim.com/163/1485874478.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
