@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="cn" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PC二维码(竞赛使用) - 散华的秘密小屋</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Sanka,"> 
+    <meta name="description" content="题目1.商品购买后，进行订单结算时，单击【支付宝】图标，如图 3-1 所示，跳转至二维码支付页面，根据商品订单号、用户 ID、收货地址 Id、支付方式信息生成二维码，如图 3-2 所示（注：可以利用,"> 
+    <meta name="author" content="Sanka"> 
+    <link rel="alternative" href="atom.xml" title="散华的秘密小屋" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">散华的秘密小屋</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="http://example.com"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">PC二维码(竞赛使用)</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">PC二维码(竞赛使用)</h1>
+        <div class="stuff">
+            <span>十一月 06, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Plan/" rel="tag">Plan</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>1.商品购买后，进行订单结算时，单击【支付宝】图标，如图 3-1 所示，跳转至二维码支付页面，根据商品订单号、用户 ID、收货地址 Id、支付方式信息生成二维码，如图 3-2 所示（注：可以利用 vue-qr 插件技术实现二维码的生成，参阅 U 盘中“03 辅助文档\vue\vue-qr”，项目已集成该插件）。</p>
+<p>2.二维码上方显示订单编号。</p>
+<p>3.启动手机上的模拟支付宝 APP，输入 PC 端的用户和密码进行 APP 登录，扫描 PC 端支付二维码进行支付，支付成功后，页面显示“支付成功”字样，如图 3-3 所示（可以根据数据库订单状态变化，判断是否支付成功）</p>
+<p>二维码模块：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"> &lt;qr</span><br><span class="line">                  v-if&#x3D;&quot;qrcodeState&quot;</span><br><span class="line">                  style&#x3D;&quot;text-align: center&quot;             			 :logoSrc&#x3D;&quot;&#39;..&#x2F;..&#x2F;static&#x2F;images&#x2F;pay&#x2F;alipaypcnew.png&#39;&quot;</span><br><span class="line">                  :text&#x3D;&quot;qrdata&quot;</span><br><span class="line">                  :size&#x3D;&quot;200&quot;</span><br><span class="line">                  :margin&#x3D;&quot;0&quot;</span><br><span class="line">&gt;&lt;&#x2F;qr&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import qr from &quot;vue-qr&quot;;</span><br><span class="line"> export default &#123;</span><br><span class="line">  components: &#123; qr &#125; &#x2F;&#x2F;挂载</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      payment: null, &#x2F;&#x2F;订单</span><br><span class="line">      selectContactId: null, &#x2F;&#x2F;选择的支付方式</span><br><span class="line">      qrcodeState: false, &#x2F;&#x2F;二维码的显示</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">      qrcode() &#123;</span><br><span class="line">      this.qrcodeState &#x3D; true;</span><br><span class="line">          </span><br><span class="line">      var vm &#x3D; this,</span><br><span class="line">          </span><br><span class="line">      id &#x3D; this.Storage.Local.get(&quot;User&quot;).id, &#x2F;&#x2F;iD</span><br><span class="line">          </span><br><span class="line">      num &#x3D; this.payment.orderNum;&#x2F;&#x2F;订单</span><br><span class="line">          </span><br><span class="line">          &#x2F;&#x2F;定时器检查订单是否支付</span><br><span class="line">      this.check &#x3D; setInterval(function() &#123;</span><br><span class="line">          </span><br><span class="line">        vm.$post(vm.API.API_CHECK_ORDER, &#123;</span><br><span class="line">          userId: id,</span><br><span class="line">          orderNum: num</span><br><span class="line">        &#125;).then(res &#x3D;&gt; &#123;</span><br><span class="line">            </span><br><span class="line">          if (res.data &#x3D;&#x3D; 1</span><br><span class="line">          ) &#123;</span><br><span class="line">            vm.Toastr.success(&quot;支付成功，2秒钟后跳转到订单历史&quot;);</span><br><span class="line">         vm.$store.commit(&quot;setCartCount&quot;,vm.getCartCount());</span><br><span class="line">              vm.$router.push(&#123;</span><br><span class="line">              path: &quot;&#x2F;account&#x2F;order&#x2F;list&quot;,</span><br><span class="line">              name: &quot;OrderList&quot;</span><br><span class="line">            &#125;);</span><br><span class="line">              </span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;, 2000);</span><br><span class="line">     </span><br><span class="line">    &#125;,</span><br><span class="line">      </span><br><span class="line">  &#125;</span><br><span class="line">  computed: &#123;&#x2F;&#x2F;计算属性！！！</span><br><span class="line">    qrdata() &#123;</span><br><span class="line">      return JSON.stringify(&#123; &#x2F;&#x2F;返回Json对象</span><br><span class="line">        orderNum: this.payment.orderNum,</span><br><span class="line">        userId: this.Storage.Local.get(&quot;User&quot;).id,</span><br><span class="line">        id: this.selectContactId,</span><br><span class="line">        paymentType: 1</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;，</span><br><span class="line">   destroyed() &#123;&#x2F;&#x2F;销毁</span><br><span class="line">    clearInterval(this.check);</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        
+                            <li title='0' data-url='https://link.hhtjim.com/163/1485877465.mp3'></li>
+                        
+                    
+                        
+                            <li title='1' data-url='https://link.hhtjim.com/163/1485874478.mp3'></li>
+                        
+                    
+                </ul>
+            
+        </div>
+        
+    
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+
+
+<script src="/js/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
