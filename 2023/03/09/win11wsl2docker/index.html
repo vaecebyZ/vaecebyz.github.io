@@ -1,0 +1,241 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>记录一次win11的wsl2安装配置记录 - 散華的秘密小屋</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Otaku,"> 
+    <meta name="description" content="徒然无事，对砚枯坐。,前言： 最近把能迁移的开发服务器几乎服务全部迁移到了docker上，本着能上docker的就不在本地安装的原则，把我以前工作的电脑安装上wsl2+docker 并且wsl和docker迁移到其他磁盘,"> 
+    <meta name="author" content="sanka"> 
+    <link rel="alternative" href="atom.xml" title="散華的秘密小屋" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="记录一次win11的wsl2安装配置记录 - 散華的秘密小屋"/>
+    <meta name="twitter:description" content="徒然无事，对砚枯坐。,前言： 最近把能迁移的开发服务器几乎服务全部迁移到了docker上，本着能上docker的就不在本地安装的原则，把我以前工作的电脑安装上wsl2+docker 并且wsl和docker迁移到其他磁盘,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="散華的秘密小屋"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="记录一次win11的wsl2安装配置记录 - 散華的秘密小屋"/>
+    <meta property="og:description" content="徒然无事，对砚枯坐。,前言： 最近把能迁移的开发服务器几乎服务全部迁移到了docker上，本着能上docker的就不在本地安装的原则，把我以前工作的电脑安装上wsl2+docker 并且wsl和docker迁移到其他磁盘,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">散華的秘密小屋</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://sanka.sbs"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">记录一次win11的wsl2安装配置记录</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">记录一次win11的wsl2安装配置记录</h1>
+        <div class="stuff">
+            <span>三月 09, 2023</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/wsl/" rel="tag">wsl</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <p><strong>前言：</strong> 最近把能迁移的开发服务器几乎服务全部迁移到了docker上，本着能上docker的就不在本地安装的原则，把我以前工作的电脑安装上wsl2+docker 并且wsl和docker迁移到其他磁盘 <del>（C盘战士狂怒）</del>。</p>
+<p>提示您需要提前了解的知识：<br>    部分wsl命令，跨越功夫网，了解.bashrc的作用,windows terminal的配置还有如何进入自己电脑的bios。</p>
+<h2 id="第一步-下载-："><a href="#第一步-下载-：" class="headerlink" title="第一步(下载)："></a>第一步(下载)：</h2><p>​    当然像什么主板开启虚拟化啥的还有在控制面板–应用与功能–启用或者关闭windows功能上开启虚拟化平台和适用于windwos的linux子系统我就不赘述了。</p>
+<p>微软商店下载对应的发行版，还有安装wsl，直接搜索就好，这里我安装的是ubuntu22.04.2</p>
+<p>(如果下载不了比如：<code>0x80072EFD</code>错误，请检查直接的windwos是否更新或者是使用loopback工具，这个文档不会介绍关于商店的东西，默认可以正常访问并且下载。) </p>
+<p><img src="/img/postfiles/ubuntu.png"></p>
+<h2 id="第二步（安装与启动wsl）："><a href="#第二步（安装与启动wsl）：" class="headerlink" title="第二步（安装与启动wsl）："></a>第二步（安装与启动wsl）：</h2><p>下载完成后打开你下载的发行版本：</p>
+<p><img src="/img/postfiles/appliction.png"></p>
+<p>​    如果打开后报错，请检查您是否开启虚拟化平台和适用于windwos的linux子系统，当然还有wsl2是否有安装。</p>
+<p>如果遇到：<code>WslRegisterDistribution failed with error: 0x800701bc</code>。<br>您可能是从wsl1升级到wsl2后未更新内核请到微软官网升级：<a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows/wsl/wsl2-kernel">传送门</a></p>
+<p>如果遇到：<code>WslRegisterDistribution failed with error: 0x8007019e</code>。<br>请检查你在控制面板的应用与功能处是否开启了适用于windows的linux子系统。或者在powershell（管理员）执行<code>Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code>，回车，输入Y或者y，然后系统重启。</p>
+<p>如果遇到：<code>WslRegisterDistribution failed with error: 0x80370102</code><br>请在bios上打开处理器的虚拟化选项，具体开启方法请自行百度。</p>
+<p>正常情况<br><img src="/img/postfiles/install.png"></p>
+<p>等待后就能正常进入系统了</p>
+<p>按下<code>ctrl+d</code>或者输入<code>exit</code>退出wsl</p>
+<p>然后查看自己安装的发行版与wsl的版本号:</p>
+<p>记住自己发行版的名称(复制一下)我的是ubuntu22.0.4</p>
+<h2 id="第三步（迁移到其他盘）："><a href="#第三步（迁移到其他盘）：" class="headerlink" title="第三步（迁移到其他盘）："></a>第三步（迁移到其他盘）：</h2><p>彻底关闭wsl</p>
+<p><code>wsl --shutdown</code></p>
+<p>导出分发版为tar文件到D盘 </p>
+<p><code>wsl --export Ubuntu-22.04 D:\Ubuntu.tar</code></p>
+<p>注销当前分发版 </p>
+<p><code>wsl --unregister Ubuntu-22.04 </code></p>
+<p>重新导入并安装WSL在D盘 </p>
+<p><code>wsl --import Ubuntu-22.04 D:\wsl\ubuntu2204 D:\Ubuntu.tar --version 2</code> </p>
+<p>删除ubuntu22.04.tar </p>
+<p><code>del D:\Ubuntu.tar</code></p>
+<h2 id="第四步（配置systemctl和默认启动用户）："><a href="#第四步（配置systemctl和默认启动用户）：" class="headerlink" title="第四步（配置systemctl和默认启动用户）："></a>第四步（配置systemctl和默认启动用户）：</h2><p>迁移完成后你会发现的你默认启动用户变成了root这个这是很危险的所以我们需要切换回自己之前创建的用户，然后启用systemctl支持。</p>
+<p>先升wsl程序（<a target="_blank" rel="noopener" href="https://github.com/microsoft/WSL/releases">Releases · microsoft/WSL (github.com)</a>）</p>
+<p>完成后进入wsl后修改/etc/wsl.conf</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#/etc/wsl.conf</span></span><br><span class="line">[boot]</span><br><span class="line">systemd=<span class="literal">true</span></span><br><span class="line">[user]</span><br><span class="line">default=你的用户名</span><br></pre></td></tr></table></figure>
+
+<p>然后exit + wsl –shudown 二连彻底停掉wsl再重新进入</p>
+<p>之后验证：</p>
+<p>如果你进入后发现默认用户不是root并且输入<code>ps --no-headers -o comm 1</code>返回为<code>systemd</code>即为成功！</p>
+<h2 id="第五步（docker安装与迁移）："><a href="#第五步（docker安装与迁移）：" class="headerlink" title="第五步（docker安装与迁移）："></a>第五步（docker安装与迁移）：</h2><p>直接下载docker Desktop安装就行</p>
+<p>接着在设置里面更改存储位置和与wsl2集成</p>
+<p><img src="/img/postfiles/dockerSeting.png"></p>
+<p><img src="/img/postfiles/dockerSeting2.png"></p>
+<p>迁移软件</p>
+<p>使用services.msc停止docker服务</p>
+<p><img src="/img/postfiles/dockerstop.png"></p>
+<p>剪切<code>C:\Program Files\Docker</code>到D盘<code>C:\Program Files\</code>下<br>使用mklink软连接程序<br><code>mklink /j &quot;C:\Program Files\Docker&quot; &quot;D:\Program Files\Docker&quot;</code></p>
+<p><img src="/img/postfiles/mlink.png"></p>
+<p>迁移磁盘文件</p>
+<p>和迁移ubunutu 方法一样</p>
+<p>彻底关闭wsl<code>wsl --shutdown</code></p>
+<p>导出分发版为tar文件到D盘 </p>
+<p><code>wsl --export docker-desktop-data D:\docker-desktop-data.tar</code></p>
+<p>注销当前分发版 </p>
+<p><code>wsl --unregister docker-desktop-data </code></p>
+<p>重新导入并安装WSL在D盘 </p>
+<p><code>wsl --import docker-desktop-data D:\wsl\docker-desktop-data D:\docker-desktop-data.tar --version 2</code> </p>
+<p>删除docker-desktop-data.tar </p>
+<p><code>del D:\docker-desktop-data.tar</code></p>
+<hr></hr>
+
+<p>导出分发版为tar文件到D盘 </p>
+<p><code>wsl --export docker-desktop D:\docker-desktop.tar</code></p>
+<p>注销当前分发版 </p>
+<p><code>wsl --unregister docker-desktop </code></p>
+<p>重新导入并安装WSL在D盘 </p>
+<p><code>wsl --import docker-desktop D:\wsl\docker-desktop D:\docker-desktop.tar --version 2</code> </p>
+<p>删除docker-desktop.tar </p>
+<p><code>del D:\docker-desktop.tar</code></p>
+<p>重启doker服务</p>
+<p><img src="/img/postfiles/dockerstart.png"></p>
+<p>启动后使用wsl 拉一个镜像试试:</p>
+<h2 id="第六步（调整与美化）："><a href="#第六步（调整与美化）：" class="headerlink" title="第六步（调整与美化）："></a>第六步（调整与美化）：</h2><p>打开windows terminal 我比较喜欢用powershell 设置好背景图和透明度之后的效果:</p>
+<p><img src="/img/postfiles/setopcity.png"></p>
+<p><img src="/img/postfiles/setbg.png"></p>
+<p><img src="/img/postfiles/neofetch.png"></p>
+<p>到此为止算是结束一步份了后面安装ohmyposh等主题和windows terminal自定义快捷键后面有时间更新吧(((( </p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                </ul>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		
+    >结束</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":360},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/js/love.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

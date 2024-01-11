@@ -1,0 +1,352 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>散華的秘密小屋 - ( ͡• ͜ʖ ͡• )</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Otaku,"> 
+    <meta name="description" content="徒然无事，对砚枯坐。,"> 
+    <meta name="author" content="sanka"> 
+    <link rel="alternative" href="atom.xml" title="散華的秘密小屋" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="散華的秘密小屋 - ( ͡• ͜ʖ ͡• )"/>
+    <meta name="twitter:description" content="徒然无事，对砚枯坐。,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="散華的秘密小屋"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="散華的秘密小屋 - ( ͡• ͜ʖ ͡• )"/>
+    <meta property="og:description" content="徒然无事，对砚枯坐。,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">散華的秘密小屋</span>
+    <div id="loader"></div>
+    <div id="single" class="page">
+    <div id="top">
+        <a class="iconfont icon-left image-icon" href="javascript:history.back()"></a>
+    </div>
+    <div class="section">
+        <div class="article">
+            <div class="main">
+                <div class="content">
+                
+                        <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .inputBox {
+      display: flex;
+      justify-content: center;
+    }
+    #color {
+      min-width: 210px;
+    }
+    .box {
+      width: 130px;
+      /* height: 120px; */
+      margin: 10px calc((100% - 132px * 5) / 5 / 2);
+      border: 1px solid #000;
+    }
+    .colorBox {
+      display: flex;
+      flex-wrap: wrap;
+      background-color: #fff;
+    }
+    .cardTop {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+    /* .tileBox {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    } */
+    .numberBox {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 40%;
+    }
+    .number {
+      font-size: 15px;
+      color: white;
+      width: 100%;
+      text-align: center;
+      margin: 0 2px;
+      font-weight: bold;
+      background-color: #000;
+    }
+    .type {
+      font-size: 12px;
+    }
+    .cardColor {
+      width: 100%;
+      border-bottom: 1px solid #000;
+      border-left: 1px solid #000;
+      max-height: 60px;
+      /* background-color: rgb(36, 27, 91); */
+    }
+    .contentInfo {
+      margin-right: auto;
+      display: flex;
+    }
+    .contentBox {
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+    }
+    .contentText {
+      font-size: 16px;
+      margin: 0 2px;
+      font-weight: bold;
+    }
+    .description {
+      font-size: 12px;
+      line-height: 25px;
+      color: #00AEEF;
+      margin: 0 2px;
+    }
+    .sameColor {
+      display: flex;
+      align-items: center;
+    }
+    .sameNumber {
+      text-align: center;
+      width: 25px;
+      line-height: 25px;
+      font-size: 12px;
+      height: 25px;
+      border: 1px solid black;
+    }
+  </style>
+  <body style="min-width: 720px">
+    <h1>开发中...</h1>
+    <div class="inputBox">
+      <img class="hbLogo" src="../img/mrhoby.png" />
+    </div>
+    <div class="inputBox">
+      <div>
+        <input
+          type="text"
+          id="color"
+          placeholder="请输入你想查询的颜色(r,g,b or hex)"
+        />
+        <button id="btn" onClick="searchColor()">查询</button>
+      </div>
+    </div>
+    <div class="colorBox"></div>
+  </body>
+  <script src="./color.js"></script>
+  <script>
+    window.onload = () => {
+      console.log("color", window.colorList);
+
+      for (const color of window.colorList) {
+        // 将新的 .box 插入到 .colorBox 中
+        $(".colorBox").append(`
+          <div class="box">
+            <div class="titleBox">
+              <div class="cardTop">
+                <div class="numberBox">
+                  <div class="atype">${color.atype}</div>
+                  <div class="number">${color.number}</div>
+                  <div class="type">${color.type}</div>
+                </div>
+                <div class="cardColor" style="background-color:${color.color};"></div>
+              </div>
+              <div class="contentInfo" >
+              <div class="contentBox">
+              <div class="contentText">${color.contentText}</div>
+              <div class="description">${color.description}</div>
+              </div>
+              <div class="sameColor">
+                <div class="sameNumber">${color.sameColor}</div>
+              </div>
+            </div>
+            </div>
+          </div>
+          `);
+      }
+
+      const input = document.getElementById("color");
+      input.addEventListener("keyup", function (event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          document.getElementById("btn").click();
+        }
+      });
+    };
+    function searchColor() {
+      try {
+        // 获取color的值
+        let color = $("#color").val();
+        // 判断是rgb还是hex
+        if (color.indexOf(",") > -1) {
+          // rgb
+          let rgb = color.split(",");
+          // let hex = rgbToHex(rgb[0], rgb[1], rgb[2]);
+          // $("#color").val(hex);
+          // $(".colorBox").css("background-color", hex);
+          for (const color of window.colorList) {
+            let colorRgb = HexToRgb(color.color);
+            let distance = calculateColorDistance(rgb, colorRgb);
+            console.log("distance", distance);
+            if (distance < 100) {
+              console.log("color", color);
+            }
+          }
+        } else {
+          // hex
+          let rgb = HexToRgb(color);
+          for (const color of window.colorList) {
+            let colorRgb = HexToRgb(color.color);
+            let distance = calculateColorDistance(rgb, colorRgb);
+            console.log("distance", distance);
+            if (distance < 100) {
+              console.log("color", color);
+            }
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    // rgb转16进制
+    function rgbToHex(r, g, b) {
+      let hex = ((r << 16) | (g << 8) | b).toString(16);
+      return "#" + new Array(Math.abs(hex.length - 7)).join("0") + hex;
+    }
+
+    // 16进制转rgb
+    function HexToRgb(hex) {
+      let rgb = [];
+      for (let i = 1; i < 7; i += 2) {
+        rgb.push(parseInt("0x" + hex.slice(i, i + 2)));
+      }
+      return rgb;
+    }
+
+    // 计算颜色距离
+    function calculateColorDistance(color1, color2) {
+      var r1 = color1[0];
+      var g1 = color1[1];
+      var b1 = color1[2];
+      var r2 = color2[0];
+      var g2 = color2[1];
+      var b2 = color2[2];
+
+      console.log("r1", r1, "g1", g1, "b1", b1, "r2", r2, "g2", g2, "b2", b2);
+
+      // 计算RGB差值的平方和
+      var distance =
+        Math.pow(r1 - r2, 2) + Math.pow(g1 - g2, 2) + Math.pow(b1 - b2, 2);
+
+      return Math.sqrt(distance);
+    }
+  </script>
+</html>
+
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":360},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/js/love.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

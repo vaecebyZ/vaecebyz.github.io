@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PC二维码(竞赛使用) - 散華的秘密小屋</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Otaku,"> 
+    <meta name="description" content="徒然无事，对砚枯坐。,题目1.商品购买后，进行订单结算时，单击【支付宝】图标，如图 3-1 所示，跳转至二维码支付页面，根据商品订单号、用户 ID、收货地址 Id、支付方式信息生成二维码，如图 3-2 所示（注：可以利用,"> 
+    <meta name="author" content="sanka"> 
+    <link rel="alternative" href="atom.xml" title="散華的秘密小屋" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="PC二维码(竞赛使用) - 散華的秘密小屋"/>
+    <meta name="twitter:description" content="徒然无事，对砚枯坐。,题目1.商品购买后，进行订单结算时，单击【支付宝】图标，如图 3-1 所示，跳转至二维码支付页面，根据商品订单号、用户 ID、收货地址 Id、支付方式信息生成二维码，如图 3-2 所示（注：可以利用,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="散華的秘密小屋"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="PC二维码(竞赛使用) - 散華的秘密小屋"/>
+    <meta property="og:description" content="徒然无事，对砚枯坐。,题目1.商品购买后，进行订单结算时，单击【支付宝】图标，如图 3-1 所示，跳转至二维码支付页面，根据商品订单号、用户 ID、收货地址 Id、支付方式信息生成二维码，如图 3-2 所示（注：可以利用,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">散華的秘密小屋</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://sanka.sbs"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">PC二维码(竞赛使用)</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">PC二维码(竞赛使用)</h1>
+        <div class="stuff">
+            <span>十一月 06, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Plan/" rel="tag">Plan</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h2 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h2><p>1.商品购买后，进行订单结算时，单击【支付宝】图标，如图 3-1 所示，跳转至二维码支付页面，根据商品订单号、用户 ID、收货地址 Id、支付方式信息生成二维码，如图 3-2 所示（注：可以利用 vue-qr 插件技术实现二维码的生成，参阅 U 盘中“03 辅助文档\vue\vue-qr”，项目已集成该插件）。</p>
+<p>2.二维码上方显示订单编号。</p>
+<p>3.启动手机上的模拟支付宝 APP，输入 PC 端的用户和密码进行 APP 登录，扫描 PC 端支付二维码进行支付，支付成功后，页面显示“支付成功”字样，如图 3-3 所示（可以根据数据库订单状态变化，判断是否支付成功）</p>
+<p>二维码模块：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">qr</span></span></span><br><span class="line"><span class="tag">    <span class="attr">v-if</span>=<span class="string">&quot;qrcodeState&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">style</span>=<span class="string">&quot;text-align: center&quot;</span>             			 </span></span><br><span class="line"><span class="tag">    <span class="attr">:logoSrc</span>=<span class="string">&quot;&#x27;../../static/images/pay/alipaypcnew.png&#x27;&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:text</span>=<span class="string">&quot;qrdata&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:size</span>=<span class="string">&quot;200&quot;</span></span></span><br><span class="line"><span class="tag">    <span class="attr">:margin</span>=<span class="string">&quot;0&quot;</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">qr</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">import</span> qr <span class="keyword">from</span> <span class="string">&quot;vue-qr&quot;</span>;</span></span><br><span class="line"><span class="language-javascript"> <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">components</span>: &#123; qr &#125; <span class="comment">//挂载</span></span></span><br><span class="line"><span class="language-javascript">  <span class="title function_">data</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="attr">payment</span>: <span class="literal">null</span>, <span class="comment">//订单</span></span></span><br><span class="line"><span class="language-javascript">      <span class="attr">selectContactId</span>: <span class="literal">null</span>, <span class="comment">//选择的支付方式</span></span></span><br><span class="line"><span class="language-javascript">      <span class="attr">qrcodeState</span>: <span class="literal">false</span>, <span class="comment">//二维码的显示</span></span></span><br><span class="line"><span class="language-javascript">    &#125;;</span></span><br><span class="line"><span class="language-javascript">  &#125;,</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="title function_">qrcode</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">this</span>.<span class="property">qrcodeState</span> = <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">          </span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">var</span> vm = <span class="variable language_">this</span>,</span></span><br><span class="line"><span class="language-javascript">          </span></span><br><span class="line"><span class="language-javascript">      id = <span class="variable language_">this</span>.<span class="property">Storage</span>.<span class="property">Local</span>.<span class="title function_">get</span>(<span class="string">&quot;User&quot;</span>).<span class="property">id</span>, <span class="comment">//iD</span></span></span><br><span class="line"><span class="language-javascript">          </span></span><br><span class="line"><span class="language-javascript">      num = <span class="variable language_">this</span>.<span class="property">payment</span>.<span class="property">orderNum</span>;<span class="comment">//订单</span></span></span><br><span class="line"><span class="language-javascript">          </span></span><br><span class="line"><span class="language-javascript">          <span class="comment">//定时器检查订单是否支付</span></span></span><br><span class="line"><span class="language-javascript">      <span class="variable language_">this</span>.<span class="property">check</span> = <span class="built_in">setInterval</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">          </span></span><br><span class="line"><span class="language-javascript">        vm.$post(vm.<span class="property">API</span>.<span class="property">API_CHECK_ORDER</span>, &#123;</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">userId</span>: id,</span></span><br><span class="line"><span class="language-javascript">          <span class="attr">orderNum</span>: num</span></span><br><span class="line"><span class="language-javascript">        &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">            </span></span><br><span class="line"><span class="language-javascript">          <span class="keyword">if</span> (res.<span class="property">data</span> == <span class="number">1</span></span></span><br><span class="line"><span class="language-javascript">          ) &#123;</span></span><br><span class="line"><span class="language-javascript">            vm.<span class="property">Toastr</span>.<span class="title function_">success</span>(<span class="string">&quot;支付成功，2秒钟后跳转到订单历史&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">         vm.<span class="property">$store</span>.<span class="title function_">commit</span>(<span class="string">&quot;setCartCount&quot;</span>,vm.<span class="title function_">getCartCount</span>());</span></span><br><span class="line"><span class="language-javascript">              vm.<span class="property">$router</span>.<span class="title function_">push</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">              <span class="attr">path</span>: <span class="string">&quot;/account/order/list&quot;</span>,</span></span><br><span class="line"><span class="language-javascript">              <span class="attr">name</span>: <span class="string">&quot;OrderList&quot;</span></span></span><br><span class="line"><span class="language-javascript">            &#125;);</span></span><br><span class="line"><span class="language-javascript">              </span></span><br><span class="line"><span class="language-javascript">          &#125;</span></span><br><span class="line"><span class="language-javascript">        &#125;);</span></span><br><span class="line"><span class="language-javascript">      &#125;, <span class="number">2000</span>);</span></span><br><span class="line"><span class="language-javascript">     </span></span><br><span class="line"><span class="language-javascript">    &#125;,</span></span><br><span class="line"><span class="language-javascript">      </span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript">  <span class="attr">computed</span>: &#123;<span class="comment">//计算属性！！！</span></span></span><br><span class="line"><span class="language-javascript">    <span class="title function_">qrdata</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">      <span class="keyword">return</span> <span class="title class_">JSON</span>.<span class="title function_">stringify</span>(&#123; <span class="comment">//返回Json对象</span></span></span><br><span class="line"><span class="language-javascript">        <span class="attr">orderNum</span>: <span class="variable language_">this</span>.<span class="property">payment</span>.<span class="property">orderNum</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">userId</span>: <span class="variable language_">this</span>.<span class="property">Storage</span>.<span class="property">Local</span>.<span class="title function_">get</span>(<span class="string">&quot;User&quot;</span>).<span class="property">id</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">id</span>: <span class="variable language_">this</span>.<span class="property">selectContactId</span>,</span></span><br><span class="line"><span class="language-javascript">        <span class="attr">paymentType</span>: <span class="number">1</span></span></span><br><span class="line"><span class="language-javascript">      &#125;);</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">  &#125;，</span></span><br><span class="line"><span class="language-javascript">   <span class="title function_">destroyed</span>(<span class="params"></span>) &#123;<span class="comment">//销毁</span></span></span><br><span class="line"><span class="language-javascript">    <span class="built_in">clearInterval</span>(<span class="variable language_">this</span>.<span class="property">check</span>);</span></span><br><span class="line"><span class="language-javascript">  &#125;</span></span><br><span class="line"><span class="language-javascript"> &#125;</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://music.163.com/song/media/outer/url?id=1349927601.mp3">
+            </audio>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		
+    >结束</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":360},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/js/love.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>

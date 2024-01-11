@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SSM项目模块开发(竞赛使用)——Uediter - 散華的秘密小屋</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Otaku,"> 
+    <meta name="description" content="徒然无事，对砚枯坐。,1.写好访问路径：
+2.新建控制器：uediterController.java123456789101112131415@Controllerpublic class UediterControl,"> 
+    <meta name="author" content="sanka"> 
+    <link rel="alternative" href="atom.xml" title="散華的秘密小屋" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    
+    
+    
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="SSM项目模块开发(竞赛使用)——Uediter - 散華的秘密小屋"/>
+    <meta name="twitter:description" content="徒然无事，对砚枯坐。,1.写好访问路径：
+2.新建控制器：uediterController.java123456789101112131415@Controllerpublic class UediterControl,"/>
+    
+    
+    
+    
+    <meta property="og:site_name" content="散華的秘密小屋"/>
+    <meta property="og:type" content="object"/>
+    <meta property="og:title" content="SSM项目模块开发(竞赛使用)——Uediter - 散華的秘密小屋"/>
+    <meta property="og:description" content="徒然无事，对砚枯坐。,1.写好访问路径：
+2.新建控制器：uediterController.java123456789101112131415@Controllerpublic class UediterControl,"/>
+    
+<link rel="stylesheet" href="/css/diaspora.css">
+
+    <script>window.searchDbPath = "/search.xml";</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet">
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">散華的秘密小屋</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="iconfont icon-home image-icon" href="javascript:;" data-url="https://sanka.sbs"></a>
+    <div title="播放/暂停" class="iconfont icon-play"></div>
+    <h3 class="subtitle">SSM项目模块开发(竞赛使用)——Uediter</h3>
+    <div class="social">
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="iconfont icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">SSM项目模块开发(竞赛使用)——Uediter</h1>
+        <div class="stuff">
+            <span>十一月 05, 2020</span>
+            
+  <ul class="post-tags-list" itemprop="keywords"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Plan/" rel="tag">Plan</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <h5 id="1-写好访问路径："><a href="#1-写好访问路径：" class="headerlink" title="1.写好访问路径："></a>1.写好访问路径：</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/B2Th60"><img src="https://s1.ax1x.com/2020/11/05/B2Th60.md.png" alt="B2Th60.md.png"></a></p>
+<h5 id="2-新建控制器：uediterController-java"><a href="#2-新建控制器：uediterController-java" class="headerlink" title="2.新建控制器：uediterController.java"></a>2.新建控制器：uediterController.java</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Controller</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">UediterController</span> &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//@Autowired</span></span><br><span class="line">	<span class="comment">//UediterService uediterService; //依赖注入但是暂时并不需要</span></span><br><span class="line">    </span><br><span class="line">	<span class="meta">@RequestMapping(value=&quot;admin/uediter&quot;,method = RequestMethod.GET)</span><span class="comment">//路径映射</span></span><br><span class="line">    </span><br><span class="line">	<span class="keyword">public</span> ModelAndView <span class="title function_">studentManage</span><span class="params">()</span> &#123;</span><br><span class="line">		<span class="type">ModelAndView</span> <span class="variable">model</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ModelAndView</span>();</span><br><span class="line">		model.setViewName(<span class="string">&quot;admin/student/uediterMain&quot;</span>);</span><br><span class="line">		<span class="keyword">return</span> model;</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-新建View-UediterMain-jsp"><a href="#3-新建View-UediterMain-jsp" class="headerlink" title="3.新建View: UediterMain.jsp"></a>3.新建View: UediterMain.jsp</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;%&gt;</span><br><span class="line">&lt;%@ taglib prefix=&quot;spring&quot; uri=&quot;http://www.springframework.org/tags&quot;%&gt;</span><br><span class="line">&lt;%@ taglib prefix=&quot;c&quot; uri=&quot;http://java.sun.com/jsp/jstl/core&quot;%&gt;</span><br><span class="line">&lt;%@page session=&quot;true&quot;%&gt;</span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;utf-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;_csrf&quot;</span> <span class="attr">content</span>=<span class="string">&quot;$&#123;_csrf.token&#125;&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;_csrf_header&quot;</span> <span class="attr">content</span>=<span class="string">&quot;$&#123;_csrf.headerName&#125;&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>商城后台<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">jsp:include</span> <span class="attr">page</span>=<span class="string">&quot;../commonCss.jsp&quot;</span>/&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">class</span>=<span class="string">&quot;blank&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">jsp:include</span> <span class="attr">page</span>=<span class="string">&quot;../main/top.jsp&quot;</span>/&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">jsp:include</span> <span class="attr">page</span>=<span class="string">&quot;../main/left.jsp&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">jsp:include</span> <span class="attr">page</span>=<span class="string">&quot;../commonJs.jsp&quot;</span>/&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;wrapper&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;content animate-panel&quot;</span>&gt;</span>	</span><br><span class="line">	<span class="comment">&lt;!--&lt;div class=&quot;small-header transition&quot;&gt;</span></span><br><span class="line"><span class="comment">		    &lt;div class=&quot;hpanel&quot;&gt;</span></span><br><span class="line"><span class="comment">		        &lt;div class=&quot;panel-body&quot;&gt;</span></span><br><span class="line"><span class="comment">					&lt;div class=&quot;row&quot;&gt;</span></span><br><span class="line"><span class="comment">							&lt;div class=&quot;hpanel&quot;&gt;</span></span><br><span class="line"><span class="comment">								&lt;div id=&quot;error_div&quot; class=&quot;text-left&quot;&gt;&lt;/div&gt;</span></span><br><span class="line"><span class="comment">									顶部搜索</span></span><br><span class="line"><span class="comment">							&lt;/div&gt;</span></span><br><span class="line"><span class="comment">						&lt;/div&gt;</span></span><br><span class="line"><span class="comment">					&lt;/div&gt;</span></span><br><span class="line"><span class="comment">				&lt;/div&gt;	</span></span><br><span class="line"><span class="comment">		&lt;/div&gt;--&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-lg-12&quot;</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;hpanel&quot;</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel-body&quot;</span>&gt;</span></span><br><span class="line">						<span class="tag">&lt;<span class="name">h1</span>&gt;</span>内容主体<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="3-引入Uediter"><a href="#3-引入Uediter" class="headerlink" title="3.引入Uediter"></a>3.引入Uediter</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/B2bkOP"><img src="https://s1.ax1x.com/2020/11/05/B2bkOP.md.png" alt="B2bkOP.md.png"></a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;row&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;col-lg-12&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;hpanel&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;panel-body&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;form-group col-lg-12&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">label</span>&gt;</span>内容<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/plain&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!-- 配置文件 --&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">src</span>=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/resources/admin/js/ueditor/ueditor.config.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!--　编辑器源码文件 --&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span></span></span><br><span class="line"><span class="tag">            <span class="attr">src</span>=<span class="string">&quot;$&#123;pageContext.request.contextPath&#125;/resources/admin/js/ueditor/ueditor.all.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">          <span class="comment">&lt;!--　实例化编辑器 --&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> ue = <span class="variable constant_">UE</span>.<span class="title function_">getEditor</span>(<span class="string">&#x27;container&#x27;</span>, &#123;</span></span><br><span class="line"><span class="language-javascript">              <span class="attr">autoWidth</span>: <span class="literal">true</span></span></span><br><span class="line"><span class="language-javascript">            &#125;);</span></span><br><span class="line"><span class="language-javascript">            ue.<span class="title function_">ready</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">              ue.<span class="title function_">setContent</span>($(<span class="string">&quot;#content&quot;</span>).<span class="title function_">val</span>());</span></span><br><span class="line"><span class="language-javascript">            &#125;);</span></span><br><span class="line"><span class="language-javascript">          </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="效果："><a href="#效果：" class="headerlink" title="效果："></a>效果：</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/B2bWpd"><img src="https://s1.ax1x.com/2020/11/05/B2bWpd.png" alt="B2bWpd.png"></a></p>
+<h5 id="一些核心有用的东西："><a href="#一些核心有用的东西：" class="headerlink" title="一些核心有用的东西："></a>一些核心有用的东西：</h5><p>​    </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">HTML</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en-US&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>ueditor demo<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 加载编辑器的容器 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">id</span>=<span class="string">&quot;container&quot;</span> <span class="attr">name</span>=<span class="string">&quot;content&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text/plain&quot;</span>&gt;</span></span><br><span class="line">        这里写你的初始化内容</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 配置文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;ueditor.config.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 编辑器源码文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;ueditor.all.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 实例化编辑器 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="keyword">var</span> ue = <span class="variable constant_">UE</span>.<span class="title function_">getEditor</span>(<span class="string">&#x27;container&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ue = <span class="variable constant_">UE</span>.<span class="title function_">getContent</span>();</span><br><span class="line"><span class="comment">//对编辑器的操作最好在编辑器ready之后再做</span></span><br><span class="line">ue.<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//设置编辑器的内容</span></span><br><span class="line">    ue.<span class="title function_">setContent</span>(<span class="string">&#x27;提交需要把contenter放到form表单里&#x27;</span>);</span><br><span class="line">    <span class="comment">//获取html内容，返回: &lt;p&gt;hello&lt;/p&gt;</span></span><br><span class="line">    <span class="keyword">var</span> html = ue.<span class="title function_">getContent</span>();</span><br><span class="line">    <span class="comment">//获取纯文本内容，返回: hello</span></span><br><span class="line">    <span class="keyword">var</span> txt = ue.<span class="title function_">getContentTxt</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="常用方法-："><a href="#常用方法-：" class="headerlink" title="常用方法 ："></a>常用方法 ：</h4><h5 id="实例化编辑器到id为-container-的-dom-容器上：详细"><a href="#实例化编辑器到id为-container-的-dom-容器上：详细" class="headerlink" title="实例化编辑器到id为 container 的 dom 容器上：详细"></a>实例化编辑器到id为 container 的 dom 容器上：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:getEditor()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ue = <span class="variable constant_">UE</span>.<span class="title function_">getEditor</span>(<span class="string">&#x27;container&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<h5 id="设置编辑器内容：详细"><a href="#设置编辑器内容：详细" class="headerlink" title="设置编辑器内容：详细"></a>设置编辑器内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setContent()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ue.<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    ue.<span class="title function_">setContent</span>(<span class="string">&#x27;&lt;p&gt;hello!&lt;/p&gt;&#x27;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="追加编辑器内容：详细"><a href="#追加编辑器内容：详细" class="headerlink" title="追加编辑器内容：详细"></a>追加编辑器内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:setContent()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ue.<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    ue.<span class="title function_">setContent</span>(<span class="string">&#x27;&lt;p&gt;new text&lt;/p&gt;&#x27;</span>, <span class="literal">true</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="获取编辑器html内容：详细"><a href="#获取编辑器html内容：详细" class="headerlink" title="获取编辑器html内容：详细"></a>获取编辑器html内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:getContent()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ue.<span class="title function_">ready</span>(<span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> html = ue.<span class="title function_">getContent</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h5 id="获取纯文本内容：详细"><a href="#获取纯文本内容：详细" class="headerlink" title="获取纯文本内容：详细"></a>获取纯文本内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:getContentTxt()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.<span class="title function_">getContentTxt</span>();</span><br></pre></td></tr></table></figure>
+
+<h5 id="获取保留格式的文本内容：详细"><a href="#获取保留格式的文本内容：详细" class="headerlink" title="获取保留格式的文本内容：详细"></a>获取保留格式的文本内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:getContent()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.<span class="title function_">getPlainTxt</span>();</span><br></pre></td></tr></table></figure>
+
+<h5 id="获取纯文本内容：详细-1"><a href="#获取纯文本内容：详细-1" class="headerlink" title="获取纯文本内容：详细"></a>获取纯文本内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:getContentTxt()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.<span class="title function_">getContentTxt</span>();</span><br></pre></td></tr></table></figure>
+
+<h5 id="判断编辑器是否有内容：详细"><a href="#判断编辑器是否有内容：详细" class="headerlink" title="判断编辑器是否有内容：详细"></a>判断编辑器是否有内容：<a target="_blank" rel="noopener" href="http://ueditor.baidu.com/doc/#UE.Editor:hasContents()">详细</a></h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ue.<span class="title function_">hasContents</span>();</span><br></pre></td></tr></table></figure>
+
+<h2 id="上传图片："><a href="#上传图片：" class="headerlink" title="上传图片："></a>上传图片：</h2><p>1.配置：</p>
+<p>在Uediter.jsp中加入CSRF相关：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">id</span>=<span class="string">&quot;parameterName&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;_csrf.parameterName&#125;&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">id</span>=<span class="string">&quot;token&quot;</span> <span class="attr">value</span>=<span class="string">&quot;$&#123;_csrf.token&#125;&quot;</span>&gt;</span> </span><br></pre></td></tr></table></figure>
+
+<p>2.在js/uediter/jsp/config.json</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">	<span class="attr">&quot;imageActionName&quot;</span><span class="punctuation">:</span><span class="string">&quot;uploadimage&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;imageFieldName&quot;</span><span class="punctuation">:</span> <span class="string">&quot;upfile&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;imageMaxSize&quot;</span><span class="punctuation">:</span> <span class="number">2048000</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;imageAllowFiles&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;.png&quot;</span><span class="punctuation">,</span> <span class="string">&quot;.jpg&quot;</span><span class="punctuation">,</span> <span class="string">&quot;.jpeg&quot;</span><span class="punctuation">,</span> <span class="string">&quot;.gif&quot;</span><span class="punctuation">,</span> <span class="string">&quot;.bmp&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;imageCompressEnable&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;imageCompressBorder&quot;</span><span class="punctuation">:</span> <span class="number">1600</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;imageInsertAlign&quot;</span><span class="punctuation">:</span> <span class="string">&quot;none&quot;</span><span class="punctuation">,</span> </span><br><span class="line">    <span class="attr">&quot;imageUrlPrefix&quot;</span><span class="punctuation">:</span> <span class="string">&quot;http://localhost:8080/Shopping&quot;</span><span class="punctuation">,</span> <span class="comment">/* 图片访问路径前缀 */</span></span><br><span class="line">    <span class="attr">&quot;imagePathFormat&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/upload/image/&#123;yyyy&#125;&#123;mm&#125;&#123;dd&#125;/&#123;time&#125;&#123;rand:6&#125;&quot;</span><span class="punctuation">,</span> <span class="comment">/* 上传保存路径,可以自定义保存路径和文件名格式 */</span></span><br><span class="line"></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>之后页面上就可以了：</p>
+<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/BoUORU"><img src="https://s1.ax1x.com/2020/11/08/BoUORU.md.png" alt="BoUORU.md.png"></a></p>
+<p>​    </p>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="http://music.163.com/song/media/outer/url?id=1349927601.mp3">
+            </audio>
+            
+        </div>
+        
+        
+    <div id="gitalk-container" class="comment link"
+		
+    >结束</div>
+
+
+    </div>
+    
+</div>
+
+
+    </div>
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":200,"height":360},"mobile":{"show":false},"rect":"opacity:0.7","log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/js/love.min.js"></script>
+
+
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/typed.js"></script>
+<script src="/js/diaspora.js"></script>
+
+
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+
+
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+</html>
