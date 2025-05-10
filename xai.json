@@ -6,7 +6,7 @@
 
     {
 
-      "url": "/images/generations",
+      "url": "https://lobechat-image-plugin-omega.vercel.app/api/generate",
 
       "name": "generateImage",
 
